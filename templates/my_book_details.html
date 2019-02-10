@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Title: {{book.title}}</h1>
+<h2><i>Author: {{book.author}}</i></h2>
+<p><img src="{{book.images}}" alt=""></p>
+<h2><p>Page Count: {{book.page_count}}</p></h2>
+<h2>Current Page: pg {{book.current_page}}</h2>
+<h2>Percent Complete: {{book.percent_complete}}</h2>
+
+<form class="" action="" method="post">
+  {%csrf_token%}
+  {{form.as_p}}
+  <input type="submit" name="" value="Submit">
+</form>
+
+<form action="" method="post">{% csrf_token %}
+    <input type="submit" name="delete_book" value="Delete" />
+</form>
+
+<p><a href="{% url 'edit_book' book.pk %}">+ Edit Book</a></p>
+{% endblock content %}

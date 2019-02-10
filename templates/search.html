@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>This is the Search Page</h1>
+<h2><a href="{% url 'form' %}">Search Again</a></h2>
+{% for result in results_list %}
+<a href="{% url 'book_details' result.pk %}"><p><img src="{{result.images}}" alt=""></p></a>
+<p>Title: {{result.title}}</p>
+<p>Author: {{result.author}}</p>
+
+
+{% endfor %}
+{% endblock content %}

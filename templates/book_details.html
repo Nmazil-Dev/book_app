@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<p><img src="{{result.images}}" alt=""></p>
+<p>Title: {{result.title}}</p>
+<p>Author: {{result.author}}</p>
+<p>Page Count: {{result.page_count}}</p>
+<form action="" method="post">{% csrf_token %}
+  {{form.as_p}}
+    <input type="submit" name="Save Book" value="save" />
+</form>
+{{book.image}}
+{% endblock content%}

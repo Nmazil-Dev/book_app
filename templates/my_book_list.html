@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Currently Saved Books</h1>
+{% for book in object_list %}
+
+<a href="{% url 'my_book_details' book.pk %}"><p><img src="{{book.images}}" alt=""></p></a>
+<p>Title: {{book.title}}</p>
+<p>Author: {{book.author}}</p>
+<p>Percent Complete: {{book.percent_complete}}</p>
+{% endfor %}
+{% endblock content %}
